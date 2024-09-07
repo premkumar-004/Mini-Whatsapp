@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
+const Chat = require("./models/chat.js");
 const port = 8080;
 
 app.set("views", path.join(__dirname, "views"));
@@ -22,7 +23,6 @@ async function main() {
 app.get("/", (req, res) => {
     res.send("Home");
 });
-
 
 
 app.listen(port, () => {
