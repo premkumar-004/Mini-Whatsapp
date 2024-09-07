@@ -1,5 +1,6 @@
 body {
     margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -7,12 +8,39 @@ body {
     background-color: rgb(189, 212, 233);
     padding: 20px;
     border-radius: 16px;
-    display: inline-block;
+    /* display: inline-block; */
+    width: 55%;
 }
 
 .msg {
     background-color: dodgerblue;
     color: white;
-    /* padding: 0.1rem; */
-    /* text-align: center; */
+    padding: 0.5rem;
+    border-radius: 0.9rem;
+}
+
+.info {
+    font-size: 1.2rem;
+    font-weight: 600;
+    /* font-style: italic; */
+}
+
+.new-chat {
+    width: 6rem;
+    height: 2.5rem;
+    background-color: rgba(20, 255, 255, 0.61);
+    color: black;
+    border: 0.8px solid grey;
+    border-radius: 0.4rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(1, 67, 67);
+        color: white;
+    }
+}
+
+.msg-text {
+    color: red;
+    font-weight: 600;
 }

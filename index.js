@@ -8,6 +8,7 @@ const port = 8080;
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({ extended: true }));
 
 main().then((res) => {
     console.log("Connection Successful");
@@ -25,6 +26,27 @@ app.get("/chats", async (req, res) => {
     let chats = await Chat.find();
     // console.log(chats);
     res.render("index.ejs", { chats });
+})
+
+//New Route
+app.get("/chats/new", (req, res) => {
+    res.render("new.ejs");
+})
+
+//create route
+app.post("/chats", (req, res) => {
+    let { from, msg, to } = req.body;
+    let newChat = new Chat({
+        from: from,
+        msg: msg,
+        to: to,
+        created_at: new Date()
+    })
+    newChat.save().then(res => { console.log("Chat was saved"); })
+        .catch(err => {
+            console.log(err);
+        })
+    res.redirect("/chats");
 })
 
 app.get("/", (req, res) => {

@@ -10,18 +10,26 @@
 
 <body>
     <h3>All Chats</h3>
+    <form action="/chats/new" method="get">
+        <button class="new-chat">New Chat</button>
+    </form>
+    <br>
     <% for(let chat of chats){ %>
         <div class="chat">
             <p>
-                From : <%= chat.from %>
+                From : <span class="info">
+                    <%= chat.from %>
+                </span>
             </p>
             <div class="msg">
                 <p>
-                    Message : <%= chat.msg %>
+                    <span class="msg-text">Message</span> : <%= chat.msg %>
                 </p>
             </div>
             <p>
-                Recieved by : <%= chat.to %>
+                Recieved by : <span class="info">
+                    <%= chat.to %>
+                </span>
             </p>
             <hr>
         </div>
