@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 const path = require("path");
 const port = 8080;
 
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use("views", path.join(__dirname, "views"));
 
 main().then((res) => {
     console.log("Connection Successful");
