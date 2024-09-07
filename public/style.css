@@ -9,7 +9,7 @@ body {
     padding: 20px;
     border-radius: 16px;
     /* display: inline-block; */
-    width: 55%;
+    width: 45%;
 }
 
 .msg {
@@ -43,4 +43,20 @@ body {
 .msg-text {
     color: red;
     font-weight: 600;
+}
+
+.edit-btn {
+    width: 5rem;
+    height: 2rem;
+    margin: 5px;
+    background-color: blanchedalmond;
+    border-radius: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(128, 118, 103);
+        color: white;
+        border: 1px solid white;
+    }
 }

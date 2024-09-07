@@ -25,6 +25,9 @@
                 <p>
                     <span class="msg-text">Message</span> : <%= chat.msg %>
                 </p>
+                <form action="/chats/<%= chat._id %>/edit" method="get">
+                    <button class="edit-btn">Edit</button>
+                </form>
             </div>
             <p>
                 Recieved by : <span class="info">
@@ -32,6 +35,14 @@
                 </span>
             </p>
             <hr>
+            <p style="font-style: italic;">
+                <span style="font-weight: 550; color :rgb(87, 87, 87);">Time :</span>
+                <%= chat.created_at.toString().split(" ")[4] %>
+            </p>
+            <p style=" font-style: italic;">
+                    <span style="font-weight: 550; color :rgb(87, 87, 87);">Date :</span>
+                    <%= chat.created_at.toString().split(" ").slice(0,4).join(" - ") %>
+            </p>
         </div>
         <br><br>
         <% } %>
