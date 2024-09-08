@@ -5,16 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit your chat</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
     <h3>Edit your chat : <%= chat._id %>
     </h3>
-    <p>This chat was sent from : <%= chat.from %> to : <%= chat.to %>
+    <p>This chat was sent from : <b>
+            <%= chat.from %>
+        </b> to : <b>
+            <%= chat.to %>
+        </b>
     </p>
-    <form action="">
-        <textarea name="msg" rows="5" cols="10"><%= chat.msg %></textarea>
-        <button>Edit</button>
+    <form action="/chats/<%= chat._id %>?_method=PUT" method="POST">
+        <textarea name="msg" rows="10" cols="50"><%= chat.msg %></textarea><br>
+        <button class="edit-btn">Edit</button>
     </form>
 </body>
 
